@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import '../theme/colors.dart';
-import '../theme/typography.dart';
+import '../../theme/colors.dart';
+import '../../theme/typography.dart';
 
 class AppButtonMedium extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color? backgroundColor;
   final Color? textColor;
+  final Color? borderColor;
 
   const AppButtonMedium({
     super.key,
@@ -14,12 +15,13 @@ class AppButtonMedium extends StatelessWidget {
     required this.onPressed,
     this.backgroundColor,
     this.textColor,
+    this.borderColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 313,
+      width: 312,
       height: 54,
       child: ElevatedButton(
         onPressed: onPressed,
@@ -29,6 +31,9 @@ class AppButtonMedium extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
+            side: BorderSide(
+              color: borderColor ?? Colors.transparent,
+            ),
           ),
         ),
         child: Text(
