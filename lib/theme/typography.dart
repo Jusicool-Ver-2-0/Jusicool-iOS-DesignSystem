@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
+import 'package:tes/theme/colors.dart';
 
 class AppTypography {
   static TextStyle titleLarge = TextStyle(
@@ -9,6 +10,7 @@ class AppTypography {
     fontSize: 48,
     height: 1.208,
     letterSpacing: 0,
+    color: AppColor.black,
   );
 
   static TextStyle titleMedium = TextStyle(
@@ -17,6 +19,7 @@ class AppTypography {
     fontSize: 36,
     height: 1.194,
     letterSpacing: 0,
+    color: AppColor.black,
   );
   static TextStyle titleSmall = TextStyle(
     fontFamily: 'Pretendard',
@@ -24,6 +27,7 @@ class AppTypography {
     fontSize: 24,
     height: 1.292,
     letterSpacing: 0,
+    color: AppColor.black,
   );
 
   static TextStyle subTitle = TextStyle(
@@ -32,6 +36,7 @@ class AppTypography {
     fontSize: 18,
     height: 1.5,
     letterSpacing: 0,
+    color: AppColor.black,
   );
 
   static TextStyle bodyLarge = TextStyle();
@@ -42,6 +47,7 @@ class AppTypography {
     fontSize: 16,
     height: 1.375,
     letterSpacing: 0,
+    color: AppColor.black,
   );
 
   static TextStyle bodySmall = TextStyle(
@@ -50,6 +56,7 @@ class AppTypography {
     fontSize: 16,
     height: 1.375,
     letterSpacing: 0,
+    color: AppColor.black,
   );
 
   static TextStyle label = TextStyle(
@@ -58,6 +65,7 @@ class AppTypography {
     fontSize: 12,
     height: 1.333,
     letterSpacing: 0,
+    color: AppColor.black,
   );
 
   static TextStyle navi = TextStyle(
@@ -66,5 +74,6 @@ class AppTypography {
     fontSize: 8,
     height: 1.5,
     letterSpacing: 0,
+    color: AppColor.black,
   );
 }

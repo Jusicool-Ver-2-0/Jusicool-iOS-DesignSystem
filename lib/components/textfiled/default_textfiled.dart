@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../theme/colors.dart';
 
-class CustomTextField extends StatelessWidget {
+class CustomTextField extends StatefulWidget {
   final String label;
   final String hintText;
 
@@ -11,13 +12,34 @@ class CustomTextField extends StatelessWidget {
   });
 
   @override
+  _CustomTextFieldState createState() => _CustomTextFieldState();
+}
+
+class _CustomTextFieldState extends State<CustomTextField> {
+  final FocusNode _focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(() {
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          label,
-          style: Theme.of(context).textTheme.bodySmall, // bodysmall 스타일 적용
+          widget.label,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(height: 8),
         Container(
@@ -26,11 +48,15 @@ class CustomTextField extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: Colors.grey, width: 1),
+            border: Border.all(
+              color: _focusNode.hasFocus ? AppColor.main : AppColor.black,
+              width: 1,
+            ),
           ),
           child: TextField(
+            focusNode: _focusNode,
             decoration: InputDecoration(
-              hintText: hintText,
+              hintText: widget.hintText,
               border: InputBorder.none,
             ),
           ),
