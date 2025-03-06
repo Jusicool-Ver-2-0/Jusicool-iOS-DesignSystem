@@ -5,17 +5,17 @@ import '../../theme/typography.dart';
 class AppButtonMedium extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
-  final Color? backgroundColor;
-  final Color? textColor;
-  final Color? borderColor;
+  final Color backgroundColor;
+  final Color textColor;
+  final Color borderColor;
 
   const AppButtonMedium({
     super.key,
     required this.text,
     required this.onPressed,
-    this.backgroundColor,
-    this.textColor,
-    this.borderColor,
+    required this.backgroundColor,
+    required this.textColor,
+    required this.borderColor,
   });
 
   @override
@@ -26,13 +26,13 @@ class AppButtonMedium extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor ?? AppColor.main,
-          foregroundColor: textColor ?? AppColor.white,
+          backgroundColor: backgroundColor,
+          foregroundColor: textColor,
           padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: BorderSide(
-              color: borderColor ?? Colors.transparent,
+              color: borderColor,
             ),
           ),
         ),
