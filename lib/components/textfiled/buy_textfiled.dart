@@ -6,12 +6,14 @@ class BuyTextField extends StatefulWidget {
   final String label;
   final String hintText;
   final String unit;
+  final String balanceText;
 
   const BuyTextField({
     super.key,
     required this.label,
     required this.hintText,
     required this.unit,
+    required this.balanceText,
   });
 
   @override
@@ -43,14 +45,9 @@ class _BuyTextFieldState extends State<BuyTextField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              widget.label,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
-          ],
+        Text(
+          widget.label,
+          style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(height: 8),
         Container(
@@ -82,6 +79,21 @@ class _BuyTextFieldState extends State<BuyTextField> {
                     color: AppColor.gray600,
                   ),
                 ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 8),
+        SizedBox(
+          width: 312, // 텍스트 필드와 같은 너비
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end, // 오른쪽 정렬
+            children: [
+              Text(
+                widget.balanceText,
+                style: AppTypography.label.copyWith(
+                  color: AppColor.main,
+                ),
+              ),
             ],
           ),
         ),

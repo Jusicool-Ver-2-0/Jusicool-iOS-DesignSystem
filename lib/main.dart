@@ -50,6 +50,7 @@ class ComponentTestScreen extends StatelessWidget {
                 label: 'Amount',
                 hintText: 'Enter amount',
                 unit: 'USD',
+                balanceText: '보유 원화 142,400,000원',
               ),
               const SizedBox(height: 16),
               Text('CustomTextField', style: AppTypography.subTitle),
