@@ -5,6 +5,7 @@ import 'package:tes/components/textfiled/buy_textfiled.dart';
 import 'package:tes/components/textfiled/default_textfiled.dart';
 import 'package:tes/components/card/news_card.dart';
 import 'package:tes/components/card/stock_card.dart';
+import 'package:tes/components/card/log_card.dart'; // LogCard import 추가
 import '../../theme/colors.dart';
 import '../../theme/typography.dart';
 
@@ -76,6 +77,14 @@ class ComponentTestScreen extends StatelessWidget {
                 price: '67,800',
                 priceChange: '+1.2%',
                 isPositive: true,
+              ),
+              const SizedBox(height: 16),
+              Text('Log Card', style: AppTypography.subTitle), // Log Card 섹션 추가
+              const SizedBox(height: 8),
+              LogCard(
+                title: '마이크로소프트',
+                subtitle: '37,250원 구매완료',
+                buyColor: AppColor.error,
               ),
               const SizedBox(height: 16),
               Text('Buttons', style: AppTypography.subTitle),
