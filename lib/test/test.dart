@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:tes/components/button/button_half.dart';
-import 'package:tes/components/button/button_medium.dart';
-import 'package:tes/components/textfiled/buy_textfiled.dart';
-import 'package:tes/components/textfiled/default_textfiled.dart';
-import 'package:tes/components/card/news_card.dart';
-import 'package:tes/components/card/stock_card.dart';
-import 'package:tes/components/card/log_card.dart'; // LogCard import 추가
-import '../../theme/colors.dart';
-import '../../theme/typography.dart';
+import 'package:tes/src/core/theme/colors/color_palette.dart';
+import 'package:tes/src/core/theme/texts/typography.dart';
+import 'package:tes/src/ui/components/button/button_half.dart';
+import 'package:tes/src/ui/components/button/button_medium.dart';
+import 'package:tes/src/ui/components/card/news_card.dart';
+import 'package:tes/src/ui/components/card/stock_card.dart';
+import 'package:tes/src/ui/components/textfiled/buy_textfiled.dart';
+import 'package:tes/src/ui/widgets/card/log_card.dart';
+import 'package:tes/src/ui/widgets/textfiled/default_textfiled.dart';
 
 void main() {
   runApp(const MyApp());
@@ -76,6 +76,7 @@ class ComponentTestScreen extends StatelessWidget {
                 logoUrl: 'https://picsum.photos/200',
                 price: '67,800',
                 priceChange: '+1.2%',
+                share: '120주 ',
                 isPositive: true,
               ),
               const SizedBox(height: 16),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../theme/colors.dart';
-import '../../theme/typography.dart';
+import '../../../core/theme/colors/color_palette.dart';
+import '../../../core/theme/texts/typography.dart';
 
 class BuyTextField extends StatefulWidget {
   final String label;

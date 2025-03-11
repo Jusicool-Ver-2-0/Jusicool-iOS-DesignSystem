@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:tes/theme/colors.dart';
+import 'package:tes/src/core/theme/colors/color_palette.dart';
 
 class AppTypography {
   static TextStyle titleLarge = TextStyle(

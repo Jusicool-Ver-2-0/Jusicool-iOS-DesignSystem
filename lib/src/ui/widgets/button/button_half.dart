@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theme/typography.dart';
+import '../../../core/theme/texts/typography.dart';
 
 class AppButtonHalf extends StatelessWidget {
   final String text;

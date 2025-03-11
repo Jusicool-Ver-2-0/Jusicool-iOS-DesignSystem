@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import '../../theme/colors.dart';
-import '../../theme/typography.dart';
+import '../../../core/theme/colors/color_palette.dart';
+import '../../../core/theme/texts/typography.dart';
 
 class StockCard extends StatelessWidget {
   final String companyName;
   final String logoUrl;
   final String price;
   final String priceChange;
+  final String share;
   final bool isPositive;
 
   const StockCard({
@@ -15,6 +16,7 @@ class StockCard extends StatelessWidget {
     required this.logoUrl,
     required this.price,
     required this.priceChange,
+    required this.share,
     this.isPositive = true,
   });
 
@@ -60,7 +62,7 @@ class StockCard extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                '123주',
+                share,
                 style: AppTypography.label.copyWith(
                   color: AppColor.gray500,
                 ),
@@ -72,12 +74,12 @@ class StockCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                '11,111,131 원',
+                price,
                 style: AppTypography.bodyMedium,
               ),
               const SizedBox(height: 4),
               Text(
-                '+111,1816 (7.9%)',
+                priceChange,
                 style: AppTypography.label.copyWith(
                   color: isPositive ? AppColor.main : AppColor.error,
                 ),
