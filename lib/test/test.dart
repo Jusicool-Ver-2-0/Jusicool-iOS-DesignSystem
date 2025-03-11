@@ -9,6 +9,7 @@ import 'package:tes/src/ui/widgets/textfiled/default_textfiled.dart';
 import 'package:tes/src/ui/widgets/card/news_card.dart';
 import 'package:tes/src/ui/widgets/card/stock_card.dart';
 import 'package:tes/src/ui/widgets/card/log_card.dart'; // LogCard import 추가
+import 'package:tes/src/ui/widgets/card/month_stock_card.dart'; // MonthStockCard import 추가
 
 void main() {
   runApp(const MyApp());
@@ -47,6 +48,7 @@ class ComponentTestScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // BuyTextField Section
               Text('BuyTextField', style: AppTypography.subTitle),
               const SizedBox(height: 8),
               const BuyTextField(
@@ -56,6 +58,8 @@ class ComponentTestScreen extends StatelessWidget {
                 balanceText: '보유 원화 142,400,000원',
               ),
               const SizedBox(height: 16),
+
+              // CustomTextField Section
               Text('CustomTextField', style: AppTypography.subTitle),
               const SizedBox(height: 8),
               const CustomTextField(
@@ -63,6 +67,8 @@ class ComponentTestScreen extends StatelessWidget {
                 hintText: 'Enter your name',
               ),
               const SizedBox(height: 16),
+
+              // NewsCard Section
               Text('News Card', style: AppTypography.subTitle),
               const SizedBox(height: 8),
               const NewsCard(
@@ -71,6 +77,8 @@ class ComponentTestScreen extends StatelessWidget {
                 imageUrl: 'https://picsum.photos/200',
               ),
               const SizedBox(height: 16),
+
+              // StockCard Section
               Text('Stock Card', style: AppTypography.subTitle),
               const SizedBox(height: 8),
               const StockCard(
@@ -82,7 +90,9 @@ class ComponentTestScreen extends StatelessWidget {
                 isPositive: true,
               ),
               const SizedBox(height: 16),
-              Text('Log Card', style: AppTypography.subTitle), // Log Card 섹션 추가
+
+              // LogCard Section
+              Text('Log Card', style: AppTypography.subTitle),
               const SizedBox(height: 8),
               LogCard(
                 title: '마이크로소프트',
@@ -90,6 +100,19 @@ class ComponentTestScreen extends StatelessWidget {
                 buyColor: AppColor.error,
               ),
               const SizedBox(height: 16),
+
+              // MonthStockCard Section (추가된 부분)
+              Text('Month Stock Card', style: AppTypography.subTitle),
+              const SizedBox(height: 8),
+              const MonthStockCard(
+                title: '애플',
+                subtitle: '+111,181',
+                imageUrl: 'https://picsum.photos/200',
+                decimal: '(7.9)%',
+              ),
+              const SizedBox(height: 16),
+
+              // Buttons Section
               Text('Buttons', style: AppTypography.subTitle),
               const SizedBox(height: 8),
               AppButtonMedium(
@@ -120,12 +143,11 @@ class ComponentTestScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              Text(
-                "toggle button",
-                style: AppTypography.subTitle,
-              ),
+
+              // ToggleButton Section
+              Text("toggle button", style: AppTypography.subTitle),
               const SizedBox(height: 8),
-              ToggleButton(),
+              const ToggleButton(),
             ],
           ),
         ),
