@@ -27,23 +27,12 @@ class StockCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColor.white,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColor.gray300,
-          width: 1,
-        ),
       ),
       child: Row(
         children: [
-          Container(
+          SizedBox(
             width: 40,
             height: 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: AppColor.gray300,
-                width: 1,
-              ),
-            ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(

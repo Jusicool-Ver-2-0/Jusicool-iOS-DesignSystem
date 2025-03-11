@@ -15,7 +15,7 @@ class LogCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
