@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:tes/src/core/theme/colors/color_palette.dart';
 
@@ -20,6 +19,7 @@ class AppTypography {
     letterSpacing: 0,
     color: AppColor.black,
   );
+
   static TextStyle titleSmall = TextStyle(
     fontFamily: 'Pretendard',
     fontWeight: FontWeight.w600,
@@ -74,5 +74,14 @@ class AppTypography {
     height: 1.5,
     letterSpacing: 0,
     color: AppColor.black,
+  );
+
+  static TextStyle buttonText = TextStyle(
+    fontFamily: 'Pretendard',
+    fontWeight: FontWeight.w600,
+    fontSize: 16,
+    height: 1.375,
+    letterSpacing: 0,
+    color: AppColor.black, 
   );
 }

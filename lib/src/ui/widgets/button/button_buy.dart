@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:tes/src/core/theme/colors/color_palette.dart';
-import 'package:tes/src/core/theme/texts/dimensions.dart';
+import 'package:tes/src/core/theme/texts/typography.dart'; // 텍스트 스타일 import
 
 class ButtonBuy extends StatelessWidget {
+  final String buttonText;
+  final Color borderColor;
+  final Color textColor;
+
+  const ButtonBuy({
+    required this.buttonText,
+    this.borderColor = AppColor.error,
+    this.textColor = AppColor.error,
+  });
+
   @override
   Widget build(BuildContext context) {
-    var buttonText = "예시 택스트";
-    var borderColor = AppColor.error;
-    var textColor = AppColor.error; 
-
     return InkWell(
       onTap: () {
         print('$buttonText 클릭!');
       },
-      borderRadius: BorderRadius.circular(AppDimensions.buttonBorderRadius),
+      borderRadius: BorderRadius.circular(12),
       child: Container(
-        width: AppDimensions.buttonWidth,
-        height: AppDimensions.buttonHeight,
+        width: 312,
+        height: 54,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
@@ -25,14 +32,10 @@ class ButtonBuy extends StatelessWidget {
           ),
         ),
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
-        child: Center(
-          child: Text(
-            buttonText,
-            style: TextStyle(
-              color: textColor,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
+        child: Text(
+          buttonText,
+          style: AppTypography.buttonText.copyWith(
+            color: textColor, 
           ),
         ),
       ),

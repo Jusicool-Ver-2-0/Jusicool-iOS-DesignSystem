@@ -157,7 +157,9 @@ class ComponentTestScreen extends StatelessWidget {
               
               SizedBox(height: 16),
 
-              ButtonBuy(),
+              ButtonBuy(
+                buttonText: "예시 텍스트",
+              ),
             ],
           ),
         ),
