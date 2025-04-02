@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/texts/typography.dart';
+import 'package:tes/src/core/theme/texts/dimensions.dart';
 
 class AppButtonHalf extends StatelessWidget {
   final String text;
@@ -22,7 +23,7 @@ class AppButtonHalf extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 150,
-      height: 54,
+      height: AppDimensions.buttonHeight,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -30,7 +31,7 @@ class AppButtonHalf extends StatelessWidget {
           foregroundColor: textColor,
           padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(AppDimensions.buttonBorderRadius),
             side: BorderSide(
               color: borderColor,
             ),

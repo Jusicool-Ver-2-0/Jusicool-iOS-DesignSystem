@@ -10,6 +10,8 @@ import 'package:tes/src/ui/widgets/card/news_card.dart';
 import 'package:tes/src/ui/widgets/card/stock_card.dart';
 import 'package:tes/src/ui/widgets/card/log_card.dart'; // LogCard import 추가
 import 'package:tes/src/ui/widgets/card/month_stock_card.dart'; // MonthStockCard import 추가
+import 'package:tes/src/ui/widgets/textfiled/comments.dart';
+import 'package:tes/src/ui/widgets/button/button_buy.dart';
 
 void main() {
   runApp(const MyApp());
@@ -148,6 +150,14 @@ class ComponentTestScreen extends StatelessWidget {
               Text("toggle button", style: AppTypography.subTitle),
               const SizedBox(height: 8),
               const ToggleButton(),
+
+              SizedBox(height: 16),
+
+              CommentTextField(),
+              
+              SizedBox(height: 16),
+
+              ButtonBuy(),
             ],
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/colors/color_palette.dart';
 import '../../../core/theme/texts/typography.dart';
+import 'package:tes/src/core/theme/texts/dimensions.dart';
 
 class AppButtonMedium extends StatelessWidget {
   final String text;
@@ -21,8 +22,8 @@ class AppButtonMedium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 312,
-      height: 54,
+      width: AppDimensions.buttonWidth,
+      height: AppDimensions.buttonHeight,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
@@ -30,7 +31,7 @@ class AppButtonMedium extends StatelessWidget {
           foregroundColor: textColor,
           padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(AppDimensions.buttonBorderRadius),
             side: BorderSide(
               color: borderColor,
             ),

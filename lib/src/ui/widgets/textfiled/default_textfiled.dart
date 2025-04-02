@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/colors/color_palette.dart';
+import 'package:tes/src/core/theme/texts/dimensions.dart';
 
 class CustomTextField extends StatefulWidget {
   final String label;
@@ -43,8 +44,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         const SizedBox(height: 8),
         Container(
-          width: 312,
-          height: 54,
+          width: AppDimensions.buttonWidth,
+          height: AppDimensions.buttonHeight,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),

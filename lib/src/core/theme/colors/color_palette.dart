@@ -19,4 +19,5 @@ class AppColor {
   static Color gray100 = Color(0xFFEFF0F2);
   static Color gray50 = Color(0xFFF5F6F8);
   static Color blueSky = Color(0x802756F1);
+  static Color main500 = Color(0xFF2756F1);
 }
