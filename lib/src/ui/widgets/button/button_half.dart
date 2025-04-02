@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../core/theme/texts/typography.dart';
+import 'package:tes/src/core/theme/texts/typography.dart';
 
 class AppButtonHalf extends StatelessWidget {
   final String text;
@@ -20,26 +19,23 @@ class AppButtonHalf extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 150,
-      height: 54,
+    return Container(
+      padding: const EdgeInsets.all(8), 
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
           foregroundColor: textColor,
-          padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
-            side: BorderSide(
-              color: borderColor,
-            ),
+            side: BorderSide(color: borderColor),
           ),
         ),
-        child: Text(
-          text,
-          style: AppTypography.bodyMedium.copyWith(
-            color: textColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          child: Text(
+            text,
+            style: AppTypography.bodyMedium.copyWith(color: textColor),
           ),
         ),
       ),

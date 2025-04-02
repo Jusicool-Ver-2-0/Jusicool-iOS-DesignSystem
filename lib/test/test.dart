@@ -62,7 +62,7 @@ class ComponentTestScreen extends StatelessWidget {
               const SizedBox(height: 16),
 
               // CustomTextField Section
-              Text('CustomTextField', style: AppTypography.subTitle),
+              Text('DefaultTextField', style: AppTypography.subTitle),
               const SizedBox(height: 8),
               const CustomTextField(
                 label: 'Name',
