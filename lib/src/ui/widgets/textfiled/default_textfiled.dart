@@ -4,11 +4,13 @@ import '../../../core/theme/colors/color_palette.dart';
 class CustomTextField extends StatefulWidget {
   final String label;
   final String hintText;
+  final String? Function(String?) validator;
 
   const CustomTextField({
     super.key,
     required this.label,
     required this.hintText,
+    required this.validator,
   });
 
   @override
@@ -33,16 +35,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
     _focusNode.dispose();
     _controller.dispose();
     super.dispose();
-  }
-
-  String? _validateInput(String? value) {
-    if (value == null || value.isEmpty) {
-      return '필수 입력 항목입니다.';
-    }
-    if (RegExp(r'\d').hasMatch(value)) {
-      return '숫자는 입력할 수 없습니다.';
-    }
-    return null;
   }
 
   @override
@@ -84,7 +76,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
       ),
-      validator: _validateInput,
+      validator: widget.validator,
       onChanged: (value) {
         setState(() {
           hasNumber = RegExp(r'\d').hasMatch(value);

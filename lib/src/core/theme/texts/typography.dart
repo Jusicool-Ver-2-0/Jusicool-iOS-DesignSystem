@@ -76,12 +76,5 @@ class AppTypography {
     color: AppColor.black,
   );
 
-  static TextStyle buttonText = TextStyle(
-    fontFamily: 'Pretendard',
-    fontWeight: FontWeight.w600,
-    fontSize: 16,
-    height: 1.375,
-    letterSpacing: 0,
-    color: AppColor.black, 
-  );
+
 }

@@ -21,8 +21,6 @@ class ButtonBuy extends StatelessWidget {
       },
       borderRadius: BorderRadius.circular(12),
       child: Container(
-        width: 312,
-        height: 54,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
@@ -34,7 +32,7 @@ class ButtonBuy extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
         child: Text(
           buttonText,
-          style: AppTypography.buttonText.copyWith(
+          style: AppTypography.bodyMedium.copyWith(
             color: textColor, 
           ),
         ),

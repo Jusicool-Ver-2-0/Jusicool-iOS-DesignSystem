@@ -64,9 +64,14 @@ class ComponentTestScreen extends StatelessWidget {
               // CustomTextField Section
               Text('DefaultTextField', style: AppTypography.subTitle),
               const SizedBox(height: 8),
-              const CustomTextField(
-                label: 'Name',
-                hintText: 'Enter your name',
+              CustomTextField(
+              label: 'Name',
+              hintText: 'Enter your name',
+              validator: (value) {
+                if (value == null || value.isEmpty) return '필수 입력 항목입니다.';
+                if (RegExp(r'\d').hasMatch(value)) return '숫자는 입력할 수 없습니다.';
+                return null;
+              },
               ),
               const SizedBox(height: 16),
 
