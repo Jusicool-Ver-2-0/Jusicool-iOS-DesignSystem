@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tes/src/core/theme/colors/color_palette.dart';
-import 'package:tes/src/core/theme/texts/typography.dart'; // 텍스트 스타일 import
+import 'package:tes/src/core/theme/texts/typography.dart'; 
 
 class ButtonBuy extends StatelessWidget {
   final String buttonText;
   final Color borderColor;
   final Color textColor;
 
-  const ButtonBuy({
+  const ButtonBuy({super.key, 
     required this.buttonText,
     this.borderColor = AppColor.error,
     this.textColor = AppColor.error,
