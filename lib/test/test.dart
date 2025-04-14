@@ -10,6 +10,8 @@ import 'package:tes/src/ui/widgets/card/news_card.dart';
 import 'package:tes/src/ui/widgets/card/stock_card.dart';
 import 'package:tes/src/ui/widgets/card/log_card.dart'; // LogCard import 추가
 import 'package:tes/src/ui/widgets/card/month_stock_card.dart'; // MonthStockCard import 추가
+import 'package:tes/src/ui/widgets/textfiled/comments.dart';
+import 'package:tes/src/ui/widgets/button/button_buy.dart';
 
 void main() {
   runApp(const MyApp());
@@ -60,11 +62,16 @@ class ComponentTestScreen extends StatelessWidget {
               const SizedBox(height: 16),
 
               // CustomTextField Section
-              Text('CustomTextField', style: AppTypography.subTitle),
+              Text('DefaultTextField', style: AppTypography.subTitle),
               const SizedBox(height: 8),
-              const CustomTextField(
-                label: 'Name',
-                hintText: 'Enter your name',
+              CustomTextField(
+              label: 'Name',
+              hintText: 'Enter your name',
+              validator: (value) {
+                if (value == null || value.isEmpty) return '필수 입력 항목입니다.';
+                if (RegExp(r'\d').hasMatch(value)) return '숫자는 입력할 수 없습니다.';
+                return null;
+              },
               ),
               const SizedBox(height: 16),
 
@@ -148,6 +155,16 @@ class ComponentTestScreen extends StatelessWidget {
               Text("toggle button", style: AppTypography.subTitle),
               const SizedBox(height: 8),
               const ToggleButton(),
+
+              SizedBox(height: 16),
+
+              CommentTextField(),
+              
+              SizedBox(height: 16),
+
+              ButtonBuy(
+                buttonText: "예시 텍스트",
+              ),
             ],
           ),
         ),
