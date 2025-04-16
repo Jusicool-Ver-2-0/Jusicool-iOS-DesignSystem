@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
 import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
 import 'package:jusicool_design_system/src/ui/widgets/button/button_buy.dart';
@@ -22,13 +23,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Component Test App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColor.main),
-        useMaterial3: true,
-      ),
-      home: const ComponentTestScreen(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 800), // Updated design size to 360x800
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          title: 'Component Test App',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: AppColor.main),
+            useMaterial3: true,
+          ),
+          home: const ComponentTestScreen(),
+        );
+      },
     );
   }
 }
@@ -41,29 +49,32 @@ class ComponentTestScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.white,
       appBar: AppBar(
-        title: const Text('Component Test'),
+        title: Text(
+          'Component Test',
+          style: TextStyle(fontSize: 20.sp), // Responsive font size
+        ),
         backgroundColor: AppColor.main,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.w), // Responsive padding
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // BuyTextField Section
               Text('BuyTextField', style: AppTypography.subTitle),
-              const SizedBox(height: 8),
-              const BuyTextField(
+              SizedBox(height: 8.h), // Responsive height
+              BuyTextField(
                 label: 'Amount',
                 hintText: 'Enter amount',
                 unit: 'USD',
                 balanceText: '보유 원화 142,400,000원',
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // CustomTextField Section
               Text('DefaultTextField', style: AppTypography.subTitle),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               DefaultTextField(
                 label: 'Name',
                 hintText: 'Enter your name',
@@ -73,22 +84,22 @@ class ComponentTestScreen extends StatelessWidget {
                   return null;
                 },
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // NewsCard Section
               Text('News Card', style: AppTypography.subTitle),
-              const SizedBox(height: 8),
-              const NewsCard(
+              SizedBox(height: 8.h),
+              NewsCard(
                 title: '뉴스 제목이 들어갑니다',
                 subtitle: '뉴스 부제목이 들어갑니다',
                 imageUrl: 'https://picsum.photos/200',
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // StockCard Section
               Text('Stock Card', style: AppTypography.subTitle),
-              const SizedBox(height: 8),
-              const StockCard(
+              SizedBox(height: 8.h),
+              StockCard(
                 companyName: '삼성전자',
                 logoUrl: 'https://picsum.photos/200',
                 price: '67,800',
@@ -96,32 +107,32 @@ class ComponentTestScreen extends StatelessWidget {
                 share: '120주 ',
                 isPositive: true,
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // LogCard Section
               Text('Log Card', style: AppTypography.subTitle),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               LogCard(
                 title: '마이크로소프트',
                 subtitle: '37,250원 구매완료',
                 buyColor: AppColor.error,
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
-              // MonthStockCard Section (추가된 부분)
+              // MonthStockCard Section
               Text('Month Stock Card', style: AppTypography.subTitle),
-              const SizedBox(height: 8),
-              const MonthStockCard(
+              SizedBox(height: 8.h),
+              MonthStockCard(
                 title: '애플',
                 subtitle: '+111,181',
                 imageUrl: 'https://picsum.photos/200',
                 decimal: '(7.9)%',
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // Buttons Section
               Text('Buttons', style: AppTypography.subTitle),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               AppButtonMedium(
                 text: 'Confirm',
                 backgroundColor: AppColor.main,
@@ -129,7 +140,7 @@ class ComponentTestScreen extends StatelessWidget {
                 textColor: AppColor.black,
                 onPressed: () {},
               ),
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -149,21 +160,21 @@ class ComponentTestScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               // ToggleButton Section
-              Text("toggle button", style: AppTypography.subTitle),
-              const SizedBox(height: 8),
-              const ToggleButton(),
+              Text('Toggle Button', style: AppTypography.subTitle),
+              SizedBox(height: 8.h),
+              ToggleButton(),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               CommentTextField(),
 
-              SizedBox(height: 16),
+              SizedBox(height: 16.h),
 
               ButtonBuy(
-                buttonText: "예시 텍스트",
+                buttonText: '예시 텍스트',
               ),
             ],
           ),

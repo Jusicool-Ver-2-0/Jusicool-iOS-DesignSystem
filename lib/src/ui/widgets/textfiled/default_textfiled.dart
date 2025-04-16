@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/theme/colors/color_palette.dart';
 
 class DefaultTextField extends StatefulWidget {
@@ -57,33 +58,34 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         labelText: widget.label,
-        labelStyle: Theme.of(context).textTheme.bodySmall,
+        labelStyle:
+            Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 14.sp),
         hintText: widget.hintText,
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(
             color: hasError ? Colors.red : AppColor.main,
-            width: 2,
+            width: 2.w,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Colors.red, width: 1),
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(color: Colors.red, width: 1.w),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(color: Colors.red, width: 2),
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: BorderSide(color: Colors.red, width: 2.w),
         ),
         errorText: widget.errorText,
         suffixIcon: widget.obscureText
             ? IconButton(
                 icon: Icon(
                   _isObscure ? Icons.visibility : Icons.visibility_off,
+                  size: 24.sp,
                 ),
                 onPressed: () {
                   setState(() {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
 import '../../../core/theme/colors/color_palette.dart';
 import '../../../core/theme/texts/typography.dart';
 
@@ -49,13 +50,13 @@ class _BuyTextFieldState extends State<BuyTextField> {
           widget.label,
           style: Theme.of(context).textTheme.bodySmall,
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: 8.h), // ✅ 적용
         Container(
-          width: 312,
-          height: 54,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          width: 312.w, // ✅ 적용
+          height: 54.h, // ✅ 적용
+          padding: EdgeInsets.symmetric(horizontal: 16.w), // ✅ 적용
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r), // ✅ 적용
             border: Border.all(
               color: _focusNode.hasFocus ? AppColor.main : AppColor.black,
               width: 1,
@@ -82,9 +83,9 @@ class _BuyTextFieldState extends State<BuyTextField> {
             ],
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: 8.h), // ✅ 적용
         SizedBox(
-          width: 312, // 텍스트 필드와 같은 너비
+          width: 312.w, // ✅ 적용
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end, // 오른쪽 정렬
             children: [

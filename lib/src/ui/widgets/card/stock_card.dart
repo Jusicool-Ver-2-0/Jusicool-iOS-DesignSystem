@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
 import '../../../core/theme/colors/color_palette.dart';
 import '../../../core/theme/texts/typography.dart';
 
@@ -23,25 +24,25 @@ class StockCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16.w), // ✅ 적용
       decoration: BoxDecoration(
         color: AppColor.white,
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(12.r), // ✅ 적용
       ),
       child: Row(
         children: [
           SizedBox(
-            width: 40,
-            height: 40,
+            width: 40.w, // ✅ 적용
+            height: 40.h, // ✅ 적용
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r), // ✅ 적용
               child: Image.network(
                 logoUrl,
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          const SizedBox(width: 12),
+          SizedBox(width: 12.w), // ✅ 적용
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -49,7 +50,7 @@ class StockCard extends StatelessWidget {
                 companyName,
                 style: AppTypography.bodyMedium,
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4.h), // ✅ 적용
               Text(
                 share,
                 style: AppTypography.label.copyWith(
@@ -58,7 +59,7 @@ class StockCard extends StatelessWidget {
               ),
             ],
           ),
-          const Spacer(),
+          Spacer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -66,7 +67,7 @@ class StockCard extends StatelessWidget {
                 price,
                 style: AppTypography.bodyMedium,
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4.h), // ✅ 적용
               Text(
                 priceChange,
                 style: AppTypography.label.copyWith(

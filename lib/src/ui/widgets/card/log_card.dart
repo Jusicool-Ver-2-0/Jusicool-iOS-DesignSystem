@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
 import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
 
 class LogCard extends StatelessWidget {
@@ -17,10 +18,10 @@ class LogCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(12.r), // ✅ 적용
         child: Row(
           children: [
-            SizedBox(width: 12),
+            SizedBox(width: 12.w), // ✅ 적용
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
 
 class CommentTextField extends StatefulWidget {
@@ -38,39 +39,36 @@ class _CommentTextFieldState extends State<CommentTextField> {
       decoration: InputDecoration(
         hintText: '댓글을 작성해보세요',
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           borderSide: BorderSide(
             color: AppColor.gray400,
-            width: 1,
+            width: 1.w,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           borderSide: BorderSide(
             color: AppColor.gray400,
-            width: 1,
+            width: 1.w,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           borderSide: BorderSide(
             color: AppColor.main,
-            width: 1,
+            width: 1.w,
           ),
         ),
         suffixIcon: GestureDetector(
           onTap: _submitText,
           child: SvgPicture.asset(
             'assets/icons/send_button.svg',
-            color: _hasText
-                ? const Color(0xFF2756F1)
-                : const Color(0xFFA5A6A9), // 동적 색상 변경
-            width: 36,
-            height: 36,
+            color: _hasText ? const Color(0xFF2756F1) : const Color(0xFFA5A6A9),
+            width: 36.w,
+            height: 36.h,
           ),
         ),
-        contentPadding:
-            const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       ),
     );
   }

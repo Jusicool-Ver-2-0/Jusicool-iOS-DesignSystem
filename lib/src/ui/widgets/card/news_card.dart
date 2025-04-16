@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
 import '../../../core/theme/colors/color_palette.dart';
 import '../../../core/theme/texts/typography.dart';
 
@@ -28,7 +29,7 @@ class NewsCard extends StatelessWidget {
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               ),
-              const SizedBox(height: 4),
+              SizedBox(height: 4.h), // ✅ 적용
               Text(
                 subtitle,
                 style: AppTypography.label.copyWith(
@@ -38,13 +39,13 @@ class NewsCard extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(width: 12),
+        SizedBox(width: 12.w), // ✅ 적용
         ClipRRect(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r), // ✅ 적용
           child: Image.network(
             imageUrl,
-            width: 90,
-            height: 90,
+            width: 90.w, // ✅ 적용
+            height: 90.h, // ✅ 적용
             fit: BoxFit.cover,
           ),
         ),

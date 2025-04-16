@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
 import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
 
 class AppButtonHalf extends StatelessWidget {
@@ -20,19 +21,20 @@ class AppButtonHalf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: EdgeInsets.all(8.r), // ✅ 적용
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: backgroundColor,
           foregroundColor: textColor,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: borderColor),
+            borderRadius: BorderRadius.circular(12.r), // ✅ 적용
+            side: BorderSide(color: borderColor, width: 1.w), // ✅ 적용
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+          padding:
+              EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h), // ✅ 적용
           child: Text(
             text,
             style: AppTypography.bodyMedium.copyWith(color: textColor),
