@@ -4,7 +4,7 @@ import '../../../core/theme/texts/typography.dart';
 
 class AppButtonMedium extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final Color backgroundColor;
   final Color textColor;
   final Color borderColor;
