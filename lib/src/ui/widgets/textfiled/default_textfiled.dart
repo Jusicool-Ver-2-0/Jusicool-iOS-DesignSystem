@@ -1,47 +1,60 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/colors/color_palette.dart';
 
-class DefaultTextfiled extends StatefulWidget {
+class DefaultTextField extends StatefulWidget {
   final String label;
   final String hintText;
   final String? Function(String?) validator;
+  final bool obscureText;
+  final TextEditingController? controller;
+  final String? errorText;
 
-  const DefaultTextfiled({
+  const DefaultTextField({
     super.key,
     required this.label,
     required this.hintText,
     required this.validator,
+    this.obscureText = false,
+    this.controller,
+    this.errorText,
   });
 
   @override
-  _DefaultTextfiledState createState() => _DefaultTextfiledState();
+  State<DefaultTextField> createState() => _DefaultTextFieldState();
 }
 
-class _DefaultTextfiledState extends State<DefaultTextfiled> {
-  final FocusNode _focusNode = FocusNode();
-  final TextEditingController _controller = TextEditingController();
-  bool hasNumber = false;
+class _DefaultTextFieldState extends State<DefaultTextField> {
+  late final FocusNode _focusNode;
+  late final TextEditingController _controller;
+  bool _isObscure = true;
 
   @override
   void initState() {
     super.initState();
-    _focusNode.addListener(() {
-      setState(() {});
-    });
+    _focusNode = FocusNode()..addListener(() => setState(() {}));
+    _controller = widget.controller ?? TextEditingController();
+    _isObscure = widget.obscureText;
   }
 
   @override
   void dispose() {
     _focusNode.dispose();
-    _controller.dispose();
+    if (widget.controller == null) {
+      _controller.dispose();
+    }
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final hasError = widget.errorText != null;
+
     return TextFormField(
       focusNode: _focusNode,
       controller: _controller,
+      obscureText: widget.obscureText && _isObscure,
+      validator: widget.validator,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
         labelText: widget.label,
         labelStyle: Theme.of(context).textTheme.bodySmall,
@@ -50,41 +63,36 @@ class _DefaultTextfiledState extends State<DefaultTextfiled> {
             const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(
-            color: hasNumber
-                ? Colors.red
-                : (_focusNode.hasFocus ? AppColor.main : AppColor.black),
-            width: 1,
-          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: hasNumber ? Colors.red : AppColor.main,
+            color: hasError ? Colors.red : AppColor.main,
             width: 2,
           ),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 1,
-          ),
+          borderSide: const BorderSide(color: Colors.red, width: 1),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 2,
-          ),
+          borderSide: const BorderSide(color: Colors.red, width: 2),
         ),
+        errorText: widget.errorText,
+        suffixIcon: widget.obscureText
+            ? IconButton(
+                icon: Icon(
+                  _isObscure ? Icons.visibility : Icons.visibility_off,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _isObscure = !_isObscure;
+                  });
+                },
+              )
+            : null,
       ),
-      validator: widget.validator,
-      onChanged: (value) {
-        setState(() {
-          hasNumber = RegExp(r'\d').hasMatch(value);
-        });
-      },
     );
   }
 }
