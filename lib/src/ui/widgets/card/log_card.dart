@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tes/src/core/theme/texts/typography.dart';
+import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
 
 class LogCard extends StatelessWidget {
   final String title;

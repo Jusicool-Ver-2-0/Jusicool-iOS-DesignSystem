@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:tes/src/core/theme/colors/color_palette.dart';
+import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
 
 class AppTypography {
   static TextStyle titleLarge = TextStyle(
@@ -38,8 +38,6 @@ class AppTypography {
     color: AppColor.black,
   );
 
-  static TextStyle bodyLarge = TextStyle();
-
   static TextStyle bodyMedium = TextStyle(
     fontFamily: 'Pretendard',
     fontWeight: FontWeight.w600,
@@ -75,6 +73,4 @@ class AppTypography {
     letterSpacing: 0,
     color: AppColor.black,
   );
-
-
 }

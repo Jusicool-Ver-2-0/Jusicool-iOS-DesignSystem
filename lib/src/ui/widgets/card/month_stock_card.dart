@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tes/src/core/theme/colors/color_palette.dart';
-import 'package:tes/src/core/theme/texts/typography.dart';
+import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
+import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
 
 class MonthStockCard extends StatelessWidget {
   final String title;

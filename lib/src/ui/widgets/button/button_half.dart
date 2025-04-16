@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tes/src/core/theme/texts/typography.dart';
+import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
 
 class AppButtonHalf extends StatelessWidget {
   final String text;
@@ -20,7 +20,7 @@ class AppButtonHalf extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8), 
+      padding: const EdgeInsets.all(8),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

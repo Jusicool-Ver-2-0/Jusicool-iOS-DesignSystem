@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../../core/theme/colors/color_palette.dart';
 
-class CustomTextField extends StatefulWidget {
+class DefaultTextfiled extends StatefulWidget {
   final String label;
   final String hintText;
   final String? Function(String?) validator;
 
-  const CustomTextField({
+  const DefaultTextfiled({
     super.key,
     required this.label,
     required this.hintText,
@@ -14,10 +14,10 @@ class CustomTextField extends StatefulWidget {
   });
 
   @override
-  _CustomTextFieldState createState() => _CustomTextFieldState();
+  _DefaultTextfiledState createState() => _DefaultTextfiledState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
+class _DefaultTextfiledState extends State<DefaultTextfiled> {
   final FocusNode _focusNode = FocusNode();
   final TextEditingController _controller = TextEditingController();
   bool hasNumber = false;
@@ -46,11 +46,14 @@ class _CustomTextFieldState extends State<CustomTextField> {
         labelText: widget.label,
         labelStyle: Theme.of(context).textTheme.bodySmall,
         hintText: widget.hintText,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 18),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(
-            color: hasNumber ? Colors.red : (_focusNode.hasFocus ? AppColor.main : AppColor.black),
+            color: hasNumber
+                ? Colors.red
+                : (_focusNode.hasFocus ? AppColor.main : AppColor.black),
             width: 1,
           ),
         ),

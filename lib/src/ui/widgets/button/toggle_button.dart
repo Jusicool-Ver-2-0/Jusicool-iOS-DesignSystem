@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:tes/src/core/theme/colors/color_palette.dart';
+import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
 
 class ToggleButton extends StatefulWidget {
   const ToggleButton({super.key});

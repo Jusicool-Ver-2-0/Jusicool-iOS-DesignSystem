@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:tes/src/core/theme/colors/color_palette.dart';
-import 'package:tes/src/core/theme/texts/typography.dart';
-import 'package:tes/src/ui/widgets/button/button_half.dart';
-import 'package:tes/src/ui/widgets/button/button_medium.dart';
-import 'package:tes/src/ui/widgets/button/toggle_button.dart';
-import 'package:tes/src/ui/widgets/textfiled/buy_textfiled.dart';
-import 'package:tes/src/ui/widgets/textfiled/default_textfiled.dart';
-import 'package:tes/src/ui/widgets/card/news_card.dart';
-import 'package:tes/src/ui/widgets/card/stock_card.dart';
-import 'package:tes/src/ui/widgets/card/log_card.dart'; // LogCard import 추가
-import 'package:tes/src/ui/widgets/card/month_stock_card.dart'; // MonthStockCard import 추가
-import 'package:tes/src/ui/widgets/textfiled/comments.dart';
-import 'package:tes/src/ui/widgets/button/button_buy.dart';
+import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
+import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
+import 'package:jusicool_design_system/src/ui/widgets/button/button_buy.dart';
+import 'package:jusicool_design_system/src/ui/widgets/button/button_half.dart';
+import 'package:jusicool_design_system/src/ui/widgets/button/button_medium.dart';
+import 'package:jusicool_design_system/src/ui/widgets/button/toggle_button.dart';
+import 'package:jusicool_design_system/src/ui/widgets/card/log_card.dart';
+import 'package:jusicool_design_system/src/ui/widgets/card/month_stock_card.dart';
+import 'package:jusicool_design_system/src/ui/widgets/card/news_card.dart';
+import 'package:jusicool_design_system/src/ui/widgets/card/stock_card.dart';
+import 'package:jusicool_design_system/src/ui/widgets/textfiled/buy_textfiled.dart';
+import 'package:jusicool_design_system/src/ui/widgets/textfiled/comments.dart';
+import 'package:jusicool_design_system/src/ui/widgets/textfiled/default_textfiled.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,14 +64,14 @@ class ComponentTestScreen extends StatelessWidget {
               // CustomTextField Section
               Text('DefaultTextField', style: AppTypography.subTitle),
               const SizedBox(height: 8),
-              CustomTextField(
-              label: 'Name',
-              hintText: 'Enter your name',
-              validator: (value) {
-                if (value == null || value.isEmpty) return '필수 입력 항목입니다.';
-                if (RegExp(r'\d').hasMatch(value)) return '숫자는 입력할 수 없습니다.';
-                return null;
-              },
+              DefaultTextfiled(
+                label: 'Name',
+                hintText: 'Enter your name',
+                validator: (value) {
+                  if (value == null || value.isEmpty) return '필수 입력 항목입니다.';
+                  if (RegExp(r'\d').hasMatch(value)) return '숫자는 입력할 수 없습니다.';
+                  return null;
+                },
               ),
               const SizedBox(height: 16),
 
@@ -159,7 +159,7 @@ class ComponentTestScreen extends StatelessWidget {
               SizedBox(height: 16),
 
               CommentTextField(),
-              
+
               SizedBox(height: 16),
 
               ButtonBuy(
