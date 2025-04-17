@@ -76,7 +76,6 @@ class ComponentTestScreen extends StatelessWidget {
               Text('DefaultTextField', style: AppTypography.subTitle),
               SizedBox(height: 8.h),
               DefaultTextField(
-                label: 'Name',
                 hintText: 'Enter your name',
                 validator: (value) {
                   if (value == null || value.isEmpty) return '필수 입력 항목입니다.';

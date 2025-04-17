@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/theme/colors/color_palette.dart';
 
 class DefaultTextField extends StatefulWidget {
-  final String label;
   final String hintText;
   final String? Function(String?) validator;
   final bool obscureText;
@@ -12,7 +11,6 @@ class DefaultTextField extends StatefulWidget {
 
   const DefaultTextField({
     super.key,
-    required this.label,
     required this.hintText,
     required this.validator,
     this.obscureText = false,
@@ -57,9 +55,6 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
       validator: widget.validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       decoration: InputDecoration(
-        labelText: widget.label,
-        labelStyle:
-            Theme.of(context).textTheme.bodySmall!.copyWith(fontSize: 14.sp),
         hintText: widget.hintText,
         contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
         border: OutlineInputBorder(
