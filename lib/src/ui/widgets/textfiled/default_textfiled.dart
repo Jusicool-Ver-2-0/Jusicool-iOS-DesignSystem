@@ -8,6 +8,7 @@ class DefaultTextField extends StatefulWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final String? errorText;
+  final void Function(String)? onChanged; // ✅ 추가됨
 
   const DefaultTextField({
     super.key,
@@ -16,6 +17,7 @@ class DefaultTextField extends StatefulWidget {
     this.obscureText = false,
     this.controller,
     this.errorText,
+    this.onChanged, // ✅ 추가됨
   });
 
   @override
@@ -54,6 +56,7 @@ class _DefaultTextFieldState extends State<DefaultTextField> {
       obscureText: widget.obscureText && _isObscure,
       validator: widget.validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
+      onChanged: widget.onChanged, // ✅ 여기서 연결
       decoration: InputDecoration(
         hintText: widget.hintText,
         contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
