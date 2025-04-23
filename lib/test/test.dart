@@ -12,7 +12,6 @@ import 'package:jusicool_design_system/src/ui/widgets/card/news_card.dart';
 import 'package:jusicool_design_system/src/ui/widgets/card/stock_card.dart';
 import 'package:jusicool_design_system/src/ui/widgets/textfiled/buy_textfiled.dart';
 import 'package:jusicool_design_system/src/ui/widgets/textfiled/comments.dart';
-import 'package:jusicool_design_system/src/ui/widgets/textfiled/default_textfiled.dart';
 
 void main() {
   runApp(const MyApp());
