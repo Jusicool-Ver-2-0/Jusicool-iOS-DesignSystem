@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
-import '../../../core/theme/colors/color_palette.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/theme/texts/typography.dart';
 
 class AppButtonMedium extends StatelessWidget {
@@ -22,29 +21,37 @@ class AppButtonMedium extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 312.w, // ✅ 적용
-      height: 54.h, // ✅ 적용
+      width: 312.w,
+      height: 54.h,
       child: ElevatedButton(
         onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          foregroundColor: textColor,
-          padding: EdgeInsets.symmetric(
-            horizontal: 32.w, // ✅ 적용
-            vertical: 16.h, // ✅ 적용
+        style: ButtonStyle(
+          backgroundColor: WidgetStateProperty.resolveWith<Color>(
+            (states) {
+              if (states.contains(WidgetState.disabled)) {
+                return backgroundColor;
+              }
+              return backgroundColor;
+            },
           ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.r), // ✅ 적용
-            side: BorderSide(
-              color: borderColor,
-              width: 1.w, // ✅ 필요시 적용 (기본값 1로 생략 가능)
+          foregroundColor: WidgetStateProperty.all(textColor),
+          padding: WidgetStateProperty.all(
+            EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
+          ),
+          shape: WidgetStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.r),
+              side: BorderSide(
+                color: borderColor,
+                width: 1.w,
+              ),
             ),
           ),
         ),
         child: Text(
           text,
           style: AppTypography.bodyMedium.copyWith(
-            color: textColor ?? AppColor.white, // ❌ screenutil과 무관
+            color: textColor,
           ),
         ),
       ),
