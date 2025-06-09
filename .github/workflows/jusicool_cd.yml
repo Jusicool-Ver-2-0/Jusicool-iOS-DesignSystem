@@ -30,9 +30,6 @@ jobs:
       - name: Checking Flutter Version
         run: flutter --version
 
-      - name: Create .env from Secret
-        run: |
-          echo "BASEURL=${{ secrets.BASEURL }}" >> .env
 
       - name: Install Dependencies
         run: flutter pub get
