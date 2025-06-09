@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
-import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../jusicool_design_system.dart'; // ✅ 추가
 
 class LogCard extends StatelessWidget {
   final String title;
@@ -16,29 +17,27 @@ class LogCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: EdgeInsets.all(12.r), // ✅ 적용
-        child: Row(
-          children: [
-            SizedBox(width: 12.w), // ✅ 적용
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: AppTypography.bodySmall,
+    return Padding(
+      padding: EdgeInsets.all(12.r), // ✅ 적용
+      child: Row(
+        children: [
+          SizedBox(width: 12.w), // ✅ 적용
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: JusicoolTypography.bodySmall,
+              ),
+              Text(
+                subtitle,
+                style: JusicoolTypography.label.copyWith(
+                  color: buyColor,
                 ),
-                Text(
-                  subtitle,
-                  style: AppTypography.label.copyWith(
-                    color: buyColor,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

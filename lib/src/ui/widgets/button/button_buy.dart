@@ -1,7 +1,8 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
-import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
-import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../core/theme/colors/color_palette.dart';
+import '../../../core/theme/texts/typography.dart';
 
 class ButtonBuy extends StatelessWidget {
   final String buttonText;
@@ -11,15 +12,15 @@ class ButtonBuy extends StatelessWidget {
   const ButtonBuy({
     super.key,
     required this.buttonText,
-    this.borderColor = AppColor.error,
-    this.textColor = AppColor.error,
+    this.borderColor = JusicoolColor.error,
+    this.textColor = JusicoolColor.error,
   });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        print('$buttonText 클릭!');
+        log('$buttonText 클릭!');
       },
       borderRadius: BorderRadius.circular(12.r), // ✅ 적용
       child: Container(
@@ -37,7 +38,7 @@ class ButtonBuy extends StatelessWidget {
         ),
         child: Text(
           buttonText,
-          style: AppTypography.bodyMedium.copyWith(
+          style: JusicoolTypography.bodyMedium.copyWith(
             color: textColor, // ❌ 적용할 필요 없음
           ),
         ),

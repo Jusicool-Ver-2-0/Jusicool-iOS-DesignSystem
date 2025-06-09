@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
-import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
-import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
+import '../../../../jusicool_design_system.dart';
 
 class MonthStockCard extends StatelessWidget {
   final String title;
@@ -34,14 +33,14 @@ class MonthStockCard extends StatelessWidget {
               backgroundImage: NetworkImage(imageUrl),
             ),
             SizedBox(width: 8.w), // ✅ 적용
-            Text(title, style: AppTypography.subTitle),
+            Text(title, style: JusicoolTypography.subTitle),
             Expanded(
               child: SizedBox(),
             ),
             Text(
               subtitle,
-              style: AppTypography.bodySmall.copyWith(
-                color: AppColor.error,
+              style: JusicoolTypography.bodySmall.copyWith(
+                color: JusicoolColor.error,
               ),
             ),
           ],

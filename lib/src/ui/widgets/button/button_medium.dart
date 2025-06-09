@@ -50,7 +50,7 @@ class AppButtonMedium extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: AppTypography.bodyMedium.copyWith(
+          style: JusicoolTypography.bodyMedium.copyWith(
             color: textColor,
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
-import 'package:jusicool_design_system/src/core/theme/texts/typography.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../jusicool_design_system.dart'; // ✅ 추가
 
 class AppButtonHalf extends StatelessWidget {
   final String text;
@@ -37,7 +38,7 @@ class AppButtonHalf extends StatelessWidget {
               EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h), // ✅ 적용
           child: Text(
             text,
-            style: AppTypography.bodyMedium.copyWith(color: textColor),
+            style: JusicoolTypography.bodyMedium.copyWith(color: textColor),
           ),
         ),
       ),
