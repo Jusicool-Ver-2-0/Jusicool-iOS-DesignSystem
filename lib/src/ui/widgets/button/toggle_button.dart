@@ -1,32 +1,46 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
-import 'package:jusicool_design_system/src/core/theme/colors/color_palette.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../jusicool_design_system.dart'; // ✅ 추가
 
 class ToggleButton extends StatefulWidget {
-  const ToggleButton({super.key});
+  const ToggleButton({
+    super.key,
+    this.isToggled = false,
+    required this.onToggle,
+  });
+
+  final bool isToggled;
+  final ValueChanged<bool> onToggle;
 
   @override
-  _ToggleButtonState createState() => _ToggleButtonState();
+  State<ToggleButton> createState() => _ToggleButtonState();
 }
 
 class _ToggleButtonState extends State<ToggleButton> {
-  bool isToggled = false;
+  late bool _isToggled;
+
+  @override
+  void initState() {
+    super.initState();
+    _isToggled = widget.isToggled;
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         setState(() {
-          isToggled = !isToggled;
+          _isToggled = !_isToggled;
         });
+        widget.onToggle(_isToggled);
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 100),
-        width: 43.w, // ✅ 적용
-        height: 24.h, // ✅ 적용
+        width: 43.w,
+        height: 24.h,
         decoration: BoxDecoration(
-          color: isToggled ? AppColor.main : AppColor.gray200,
-          borderRadius: BorderRadius.circular(20.r), // ✅ 적용
+          color: _isToggled ? JusicoolColor.main : JusicoolColor.gray200,
+          borderRadius: BorderRadius.circular(20.r),
         ),
         child: Stack(
           alignment: Alignment.center,
@@ -34,12 +48,12 @@ class _ToggleButtonState extends State<ToggleButton> {
             AnimatedPositioned(
               duration: const Duration(milliseconds: 100),
               curve: Curves.easeInOut,
-              right: isToggled ? 5.w : 20.w, // ✅ 적용
+              right: _isToggled ? 5.w : 20.w,
               child: Container(
-                width: 18.w, // ✅ 적용
-                height: 18.h, // ✅ 적용
-                decoration: BoxDecoration(
-                  color: AppColor.white,
+                width: 18.w,
+                height: 18.h,
+                decoration: const BoxDecoration(
+                  color: JusicoolColor.white,
                   shape: BoxShape.circle,
                 ),
               ),

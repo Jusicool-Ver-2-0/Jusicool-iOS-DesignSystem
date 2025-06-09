@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../core/theme/colors/color_palette.dart';
 import '../../../core/theme/texts/typography.dart';
 
@@ -31,15 +31,15 @@ class NewsCard extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: AppTypography.bodyMedium,
+                  style: JusicoolTypography.bodyMedium,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 4.h),
                 Text(
                   subtitle,
-                  style: AppTypography.label.copyWith(
-                    color: AppColor.gray500,
+                  style: JusicoolTypography.label.copyWith(
+                    color: JusicoolColor.gray500,
                   ),
                 ),
               ],

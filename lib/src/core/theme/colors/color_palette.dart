@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-class AppColor {
+class JusicoolColor {
   // 메인 색상
   static const Color main = Color(0xFF2756F1);
   static const Color main500 = Color(0xFF2756F1);

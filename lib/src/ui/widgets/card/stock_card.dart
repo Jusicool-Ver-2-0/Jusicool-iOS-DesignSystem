@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ 추가
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '../../../core/theme/colors/color_palette.dart';
 import '../../../core/theme/texts/typography.dart';
 
@@ -26,7 +27,7 @@ class StockCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(16.w), // ✅ 적용
       decoration: BoxDecoration(
-        color: AppColor.white,
+        color: JusicoolColor.white,
         borderRadius: BorderRadius.circular(12.r), // ✅ 적용
       ),
       child: Row(
@@ -48,13 +49,13 @@ class StockCard extends StatelessWidget {
             children: [
               Text(
                 companyName,
-                style: AppTypography.bodyMedium,
+                style: JusicoolTypography.bodyMedium,
               ),
               SizedBox(height: 4.h), // ✅ 적용
               Text(
                 share,
-                style: AppTypography.label.copyWith(
-                  color: AppColor.gray500,
+                style: JusicoolTypography.label.copyWith(
+                  color: JusicoolColor.gray500,
                 ),
               ),
             ],
@@ -65,13 +66,13 @@ class StockCard extends StatelessWidget {
             children: [
               Text(
                 price,
-                style: AppTypography.bodyMedium,
+                style: JusicoolTypography.bodyMedium,
               ),
               SizedBox(height: 4.h), // ✅ 적용
               Text(
                 priceChange,
-                style: AppTypography.label.copyWith(
-                  color: isPositive ? AppColor.main : AppColor.error,
+                style: JusicoolTypography.label.copyWith(
+                  color: isPositive ? JusicoolColor.main : JusicoolColor.error,
                 ),
               ),
             ],
