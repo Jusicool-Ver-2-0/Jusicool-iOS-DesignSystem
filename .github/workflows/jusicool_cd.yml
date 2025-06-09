@@ -10,7 +10,7 @@ on:
 jobs:
   flutter_test:
     name: Run flutter test and analyze
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
 
       - name: Checkout Flutter repository
