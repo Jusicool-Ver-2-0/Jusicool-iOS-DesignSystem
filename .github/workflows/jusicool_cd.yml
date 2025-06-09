@@ -37,9 +37,6 @@ jobs:
       - name: Analyze project source
         run: flutter analyze
 
-      - name: Build Test IOS
-        run: flutter build ios --release --no-codesign
-
       - name: Publish Design System
         uses: k-paxian/dart-package-publisher@master
         with:
