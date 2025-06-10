@@ -155,7 +155,11 @@ class ComponentTestScreen extends StatelessWidget {
 
               ButtonBuy(buttonText: '예시 텍스트'),
               SizedBox(height: 16.h),
-              JusicoolIcons.search(),
+
+              JusicoolImage.cloud(
+                width: 100.w,
+                height: 100.h,
+              ),
             ],
           ),
         ),
