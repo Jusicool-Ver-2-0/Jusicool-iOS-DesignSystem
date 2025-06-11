@@ -61,7 +61,7 @@ class _CommentTextFieldState extends State<CommentTextField> {
         ),
         suffixIcon: GestureDetector(
           onTap: _submitText,
-          child: JusicoolIcons.send(
+          child: JusicoolIcon.send(
             width: 36.w,
             height: 36.h,
             color: _hasText ? JusicoolColor.main : JusicoolColor.gray400,

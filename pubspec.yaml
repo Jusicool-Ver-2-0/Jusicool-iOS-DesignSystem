@@ -1,7 +1,7 @@
 name: jusicool_design_system
 description: "Jusicool에 사용할 design system"
 repository: "https://github.com/Jusicool-Ver-2-0/Jusicool-iOS-DesignSystem"
-version: 1.0.0
+version: 1.0.1
 
 environment:
   sdk: ^3.6.0
@@ -26,6 +26,7 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/images/
 
   fonts:
     - family: Pretendard

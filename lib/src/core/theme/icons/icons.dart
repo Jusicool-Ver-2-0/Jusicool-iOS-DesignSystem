@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class JusicoolIcons {
-  JusicoolIcons._();
+class JusicoolIcon {
+  JusicoolIcon._();
 
   static Widget _buildIcon(
     String fileName, {
@@ -68,33 +68,6 @@ class JusicoolIcons {
       _buildIcon('back_arrow.svg',
           color: color, width: width, height: height, onTap: onTap);
 
-  static Widget cards({
-    Color? color,
-    double width = 24,
-    double height = 24,
-    VoidCallback? onTap,
-  }) =>
-      _buildIcon('cards.svg',
-          color: color, width: width, height: height, onTap: onTap);
-
-  static Widget check({
-    Color? color,
-    double width = 24,
-    double height = 24,
-    VoidCallback? onTap,
-  }) =>
-      _buildIcon('check.svg',
-          color: color, width: width, height: height, onTap: onTap);
-
-  static Widget cloud({
-    Color? color,
-    double width = 24,
-    double height = 24,
-    VoidCallback? onTap,
-  }) =>
-      _buildIcon('cloud.svg',
-          color: color, width: width, height: height, onTap: onTap);
-
   static Widget forwardArrow({
     Color? color,
     double width = 24,
@@ -104,15 +77,6 @@ class JusicoolIcons {
       _buildIcon('forward_arrow.svg',
           color: color, width: width, height: height, onTap: onTap);
 
-  static Widget graphic({
-    Color? color,
-    double width = 24,
-    double height = 24,
-    VoidCallback? onTap,
-  }) =>
-      _buildIcon('graphic.svg',
-          color: color, width: width, height: height, onTap: onTap);
-
   static Widget heart({
     Color? color,
     double width = 24,
@@ -120,15 +84,6 @@ class JusicoolIcons {
     VoidCallback? onTap,
   }) =>
       _buildIcon('heart.svg',
-          color: color, width: width, height: height, onTap: onTap);
-
-  static Widget jusicoolLogo({
-    Color? color,
-    double width = 24,
-    double height = 24,
-    VoidCallback? onTap,
-  }) =>
-      _buildIcon('JUSICOOL_LOGO.svg',
           color: color, width: width, height: height, onTap: onTap);
 
   static Widget pencilLine({
@@ -164,7 +119,7 @@ class JusicoolIcons {
     double height = 24,
     VoidCallback? onTap,
   }) =>
-      _buildIcon('send.svg',
+      _buildIcon('send_button.svg',
           color: color, width: width, height: height, onTap: onTap);
 
   static Widget setting({
