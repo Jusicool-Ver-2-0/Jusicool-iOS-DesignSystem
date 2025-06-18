@@ -50,6 +50,15 @@ class JusicoolIcon {
       _buildIcon('news.svg',
           color: color, width: width, height: height, onTap: onTap);
 
+  static Widget person({
+    Color? color,
+    double width = 24,
+    double height = 24,
+    VoidCallback? onTap,
+  }) =>
+      _buildIcon('person.svg',
+          color: color, width: width, height: height, onTap: onTap);
+
   static Widget pieChart({
     Color? color,
     double width = 24,
