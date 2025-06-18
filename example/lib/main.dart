@@ -160,6 +160,10 @@ class ComponentTestScreen extends StatelessWidget {
                 width: 100.w,
                 height: 100.h,
               ),
+
+              JusicoolIcon.chart(),
+              JusicoolIcon.news(),
+              JusicoolIcon.person(),
             ],
           ),
         ),
