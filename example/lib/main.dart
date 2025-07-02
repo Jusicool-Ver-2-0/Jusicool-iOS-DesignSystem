@@ -45,7 +45,7 @@ class ComponentTestScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.w), // Responsive padding
+          padding: EdgeInsets.fromLTRB(24.w, 16.h, 24.w, 56.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -156,10 +156,7 @@ class ComponentTestScreen extends StatelessWidget {
               ButtonBuy(buttonText: '예시 텍스트'),
               SizedBox(height: 16.h),
 
-              JusicoolImage.cloud(
-                width: 100.w,
-                height: 100.h,
-              ),
+              JusicoolImage.cloud(width: 100.w, height: 100.h),
 
               JusicoolIcon.chart(),
               JusicoolIcon.news(),
