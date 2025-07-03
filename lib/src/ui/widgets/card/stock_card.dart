@@ -33,6 +33,7 @@ class StockCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
+            spacing: 14.w,
             children: [
               SizedBox(
                 width: 40.w,
@@ -45,15 +46,14 @@ class StockCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 12.w),
               Column(
+                spacing: 2.h,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     companyName,
                     style: JusicoolTypography.bodyMedium,
                   ),
-                  SizedBox(height: 4.h),
                   Text(
                     share,
                     style: JusicoolTypography.label.copyWith(
@@ -65,13 +65,13 @@ class StockCard extends StatelessWidget {
             ],
           ),
           Column(
+            spacing: 2.h,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 price,
                 style: JusicoolTypography.bodyMedium,
               ),
-              SizedBox(height: 4.h),
               Text(
                 priceChange,
                 style: JusicoolTypography.label.copyWith(
