@@ -25,50 +25,53 @@ class StockCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.w), // ✅ 적용
       decoration: BoxDecoration(
         color: JusicoolColor.white,
-        borderRadius: BorderRadius.circular(12.r), // ✅ 적용
+        borderRadius: BorderRadius.circular(12.r),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(
-            width: 40.w, // ✅ 적용
-            height: 40.h, // ✅ 적용
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20.r), // ✅ 적용
-              child: Image.network(
-                logoUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          SizedBox(width: 12.w), // ✅ 적용
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
+            spacing: 14.w,
             children: [
-              Text(
-                companyName,
-                style: JusicoolTypography.bodyMedium,
-              ),
-              SizedBox(height: 4.h), // ✅ 적용
-              Text(
-                share,
-                style: JusicoolTypography.label.copyWith(
-                  color: JusicoolColor.gray500,
+              SizedBox(
+                width: 40.w,
+                height: 40.h,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.r),
+                  child: Image.network(
+                    logoUrl,
+                    fit: BoxFit.cover,
+                  ),
                 ),
+              ),
+              Column(
+                spacing: 2.h,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    companyName,
+                    style: JusicoolTypography.bodyMedium,
+                  ),
+                  Text(
+                    share,
+                    style: JusicoolTypography.label.copyWith(
+                      color: JusicoolColor.gray500,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
-          Spacer(),
           Column(
+            spacing: 2.h,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
                 price,
                 style: JusicoolTypography.bodyMedium,
               ),
-              SizedBox(height: 4.h), // ✅ 적용
               Text(
                 priceChange,
                 style: JusicoolTypography.label.copyWith(
